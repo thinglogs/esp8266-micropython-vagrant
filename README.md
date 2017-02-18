@@ -1,10 +1,10 @@
 # ESP8266 & MicroPython SDK Virtual Machine
-Vagrant file to build a virtual machine that can compile the [ESP8266 open SDK](https://github.com/pfalcon/esp-open-sdk) &amp; 
+Vagrant file to build a virtual machine that can compile the [ESP8266/ESP32 open SDK](https://github.com/pfalcon/esp-open-sdk) &amp; 
 [MicroPython](https://micropython.org/) firmware.
 
-Note that MicroPython support for the ESP8266 is in _very_ early stages and does
+Note that MicroPython support for the ESP8266/ESP32 is in _very_ early stages and does
 not support the full capabilities of other MicroPython boards.  However this VM
-will help make it easy to build and install MicroPython for the ESP8266 to test
+will help make it easy to build and install MicroPython for the ESP8266/ESP32 to test
 it out and even contribute to it.
 
 Many thanks to the contributors of ESP open SDK & MicroPython for making
@@ -30,7 +30,7 @@ command to enter an SSH session on it:
 
     vagrant ssh
 
-Once inside the virtual machine you will see two git repositories that have
+Once inside the virtual machine you will see three git repositories that have
 already been cloned:
 
 *   [esp-open-sdk](https://github.com/pfalcon/esp-open-sdk) - This is an SDK to
@@ -38,6 +38,10 @@ already been cloned:
 
 *   [micropython](https://github.com/micropython/micropython) - This is the MicroPython
     SDK which allows running embedded Python code on an ESP8266.
+
+*   [micropython-ESP32](https://github.com/micropython/micropython-esp32) - This is the MicroPython ESP
+    SDK which allows running embedded Python code on an ESP32. Eventually, this will be merged into the micropython SDK
+    and this will go away.
 
 ## ESP Open SDK Compilation
 
