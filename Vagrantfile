@@ -16,6 +16,7 @@ Vagrant.configure(2) do |config|
 
   # Provision script to install dependencies used by the esp-open-sdk and
   # micropython tools.  First install dependencies as root.
+
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     echo "Installing esp-open-sdk, Espressif ESP-IDF, and micropython dependencies..."
     sudo apt-get update
@@ -34,8 +35,18 @@ Vagrant.configure(2) do |config|
     git clone --recursive https://github.com/espressif/esp-idf.git
     git clone https://github.com/micropython/micropython.git
     git clone https://github.com/micropython/micropython-esp32.git
+    cd micropython-esp32
+    make -C mpy-cross
+  SHELL
+
+  config.vm.provision "file", source: "makefile", destination: "~/micropython-esp32/esp32/makefile"
+
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    cd ~/micropython-esp32/esp32
+    make
     echo "Finished provisioning, now run 'vagrant ssh' to enter the virtual machine."
   SHELL
+
 
   # Virtualbox VM configuration.
   config.vm.provider "virtualbox" do |v|
