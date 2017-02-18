@@ -33,6 +33,7 @@ Vagrant.configure(2) do |config|
     git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
     git clone --recursive https://github.com/espressif/esp-idf.git
     git clone https://github.com/micropython/micropython.git
+    git clone https://github.com/micropython/micropython-esp32.git
     echo "Finished provisioning, now run 'vagrant ssh' to enter the virtual machine."
   SHELL
 
