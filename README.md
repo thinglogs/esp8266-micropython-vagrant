@@ -1,4 +1,4 @@
-# ESP8266 & MicroPython SDK Virtual Machine
+# ESP8266/ESP32 & MicroPython SDK Virtual Machine
 Vagrant file to build a virtual machine that can compile the [ESP8266/ESP32 open SDK](https://github.com/pfalcon/esp-open-sdk) &amp; 
 [MicroPython](https://micropython.org/) firmware.
 
